@@ -1,0 +1,75 @@
+🔹 Polymorphism in Java
+
+Polymorphism = “Many forms”
+
+👉 Same method name, different behavior, depending on:
+
+parameters (compile time)
+
+object type (runtime)
+
+Java supports polymorphism in two major ways:
+
+
+1️⃣ Compile-Time Polymorphism (Method Overloading)
+🔹 What it is
+
+When multiple methods have the same name but different parameter lists, and the method call is resolved at compile time.
+
+🔹 Rules for Method Overloading
+
+✔ Same method name
+✔ Different parameter list (number / type / order)
+
+❌ Cannot overload by:
+
+Return type only
+
+Access modifier only
+
+🔹 Why it’s compile-time?
+
+The compiler knows exactly which method to call by looking at arguments.
+
+🔹 Real-world use
+
+Utility classes
+
+APIs (e.g., println())
+
+Cleaner, readable code
+
+
+
+2️⃣ Runtime Polymorphism (Method Overriding)
+🔹 What it is
+
+When a subclass provides its own implementation of a method already defined in its parent class.
+
+
+
+
+🔹 Why Dynamic Method Dispatch is CRUCIAL
+✅ Achieves Runtime Polymorphism
+✅ Enables Loose Coupling
+✅ Used by Spring, Hibernate, JDBC
+✅ Makes code extensible
+
+
+
+
+
+
+
+SOURCE CODE
+   ↓
+COMPILER
+   ├─ checks method in reference
+   ├─ generates invokevirtual
+   ↓
+BYTECODE
+   ↓
+JVM
+   ├─ object type = B
+   ├─ v-table lookup
+   ├─ call B.sound()
