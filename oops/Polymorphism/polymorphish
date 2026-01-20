@@ -1,3 +1,18 @@
+; Polymorphism
+
+; Compile-time polymorphism (method overloading)
+
+; Runtime polymorphism (method overriding)
+
+; Upcasting & Downcasting
+
+; Dynamic method dispatch
+
+
+
+
+
+
 🔹 Polymorphism in Java
 
 Polymorphism = “Many forms”
@@ -73,3 +88,7 @@ JVM
    ├─ object type = B
    ├─ v-table lookup
    ├─ call B.sound()
+
+
+
+static methods resolved at the runtime 
