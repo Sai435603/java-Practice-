@@ -3,16 +3,14 @@
 // 2. Submit()
 class Printer{
      private boolean hasJob = false;
-     private boolean isPrinterWaiting = false;
      synchronized void print(){
         try{
             System.out.println("Printer is waiteng for the job...");
-            isPrinterWaiting = true;
-            notify();
-            while(!hasJob){
+            while(!hasJob){ // if there is no job printer should wait for the job
                 wait();
             }
             System.out.println("Document is printed :)");
+            isPrinterWaiting = false;
         }
         catch(Exception e){
              Thread.currentThread().interrupt();
@@ -24,11 +22,8 @@ class Printer{
             System.out.println("Document Submission Scheduled...");
             Thread.sleep(2000);
             synchronized(this){
-                System.out.println("Document is submitted...");
                 hasJob = true;
-                while(!isPrinterWaiting){ // printer is not waiting 
-                    wait();
-                }
+                System.out.println("Document is submitted...");
                 notify();
             }
         }
