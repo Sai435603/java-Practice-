@@ -39,7 +39,7 @@ class Main{
          Thread thread1 = new Thread(()->{
              printer.submit();
          });
-
+         // implementing the run method from runnable interface //functional interface (interface with single function)
          Thread thread2 = new Thread(()->{
              printer.print();
          });
